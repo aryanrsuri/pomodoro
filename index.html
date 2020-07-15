@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>POMO</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <link rel='stylesheet' type="text/css" href="main.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+
+        <script src="main.js"></script>
+        <div class="sidenav" id="mySidenav">
+            <span class="span">Set Session Timer:</span>
+            <div><input oninput="ranger()" type="range" min="5" max="75" value="25" step="5" class="slider" id="ran"></div>
+            <div id="slideval"></div>
+            <span class="span">Session Number Goal:</span>
+            <div><input oninput="ranger2()" type="range" min="1" max="12" value="4" step="1" class="slider" id="rang"></div>
+            <div id="slidevalu"></div>
+        </div>
+        <div id="cover"></div>
+        <div style=" color: rgb(216, 32, 0)" class="ml">DO MORE</div>
+        
+        <div id="time"></div>
+        <div id="div-cover">
+
+            <div id="div-button">
+                
+                <button onclick="pomo()">start session</button>
+                <button onclick="cancel()">cancel session</button>
+                
+                <div id="div-count"></div>
+                <div id="div-total"></div>
+            </div>
+
+            <!-- <div id="otherbt">
+
+                <span onclick="setgoal()">set goal</span>
+            ________________
+                <span>clear cache</span> 
+              
+            </div> -->
+           
+
+        
+        </div>
+        <i id="setting"style="position: absolute; z-index: 5;" onclick="openNav()" class="fa">&#xf013;</i>
+        
+    </body>
+</html>
