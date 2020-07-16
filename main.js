@@ -1,5 +1,3 @@
-
-
 var opacity = 0;
 var sponfuncCalls = 0;
 var funcCalls = localStorage.getItem("sessions");
@@ -21,9 +19,9 @@ function startTimer(duration, display) {
             funcCalls++
            
             opac();
-            
+            changetitle();
             localStorage.setItem("sessions", funcCalls);
-            
+            alert("Session number " + sponfuncCalls + " done!" );
             document.getElementById('div-count').textContent = "You have done " + sponfuncCalls + " pomodoro session(s) ";
             document.getElementById('div-total').textContent = " " + funcCalls + " pomodoro session(s) total";
         }
@@ -38,6 +36,7 @@ var x = false;
 
 
 function pomo() {
+    revert();
     var theduration = document.getElementById("ran").value;
     document.getElementById('div-count').textContent = "Get to Work!";
     var timing = 60 * theduration,
@@ -45,6 +44,8 @@ function pomo() {
         x = true;
         startTimer(timing, display);
 };
+
+
 
 function opac(sessions){
         sess = document.getElementById("rang").value;
@@ -107,4 +108,16 @@ function handleMousePos(event) {
 }
 
 document.addEventListener("click", handleMousePos);
+
+function changetitle() {
+  _title = "SESSION DONE";
+  document.title = _title;
+  return;
+}
+
+function revert(){
+  _title_ = "POMO";
+  document.title = _title_;
+  return;
+}
 
